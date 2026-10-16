@@ -1,0 +1,22 @@
+:root {
+  --navy: #243344;
+  --navy-deep: #1b2834;
+  --gold: #f4c03b;
+  --gold-hover: #e0ad28;
+  --white: #ffffff;
+  --off-white: #f7f7f7;
+  --gray: #f1f1f1;
+  --muted: #6d7680;
+  --text: #4a4a4a;
+  --border: #e6e6e6;
+  --shadow: 0 10px 50px rgba(36, 51, 68, 0.15);
+  --shadow-sm: 0 10px 30px rgba(36, 51, 68, 0.08);
+  --header-shadow: 0 8px 24px rgba(36, 51, 68, 0.12);
+  --container: 1200px;
+  --font: 'Roboto', sans-serif;
+  --font-heading: 'Roboto Slab', serif;
+  --header-h: 90px;
+  --topbar-h: 46px;
+  --focus: 2px solid var(--gold);
+  --transition: 0.35s ease;
+}
