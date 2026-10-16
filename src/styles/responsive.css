@@ -343,6 +343,7 @@
   .service-grid {
     grid-template-columns: 1fr;
     width: calc(100% - 32px);
+    row-gap: 74px;
   }
 
   .service-card,
@@ -771,5 +772,33 @@
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-copy .kicker,
+  .services-head .kicker,
+  .projects-header .kicker {
+    font-size: 22px;
+  }
+
+  .about-copy .section-title,
+  .services-head .section-title,
+  .projects-header .section-title {
+    font-size: clamp(32px, 5vw, 42px);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-copy .kicker,
+  .services-head .kicker,
+  .projects-header .kicker {
+    font-size: 18px;
+  }
+
+  .about-copy .section-title,
+  .services-head .section-title,
+  .projects-header .section-title {
+    font-size: 30px;
   }
 }

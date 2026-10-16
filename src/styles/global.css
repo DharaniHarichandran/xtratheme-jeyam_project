@@ -872,7 +872,8 @@ ul {
 .features::before {
   content: '';
   position: absolute;
-  inset: 0 0 190px;
+  /* Keep the navy panel behind the full feature cards while they flip. */
+  inset: 0 0 130px;
   background-image:
     linear-gradient(rgba(36, 51, 68, 0.88), rgba(36, 51, 68, 0.88)),
     url('/images/row-bg.jpg');
@@ -1061,14 +1062,23 @@ ul {
   padding-top: 32px;
 }
 
+.about-copy .ghost-label {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
 .about-copy .kicker {
-  color: var(--navy);
-  font-size: 13px;
+  color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  letter-spacing: 0;
   margin-bottom: 12px;
 }
 
 .about-copy .section-title {
-  font-size: 50px;
+  color: #080808;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(42px, 4vw, 60px);
+  line-height: 1.15;
   margin-bottom: 24px;
 }
 
@@ -1089,16 +1099,45 @@ ul {
 .check-grid li {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-size: 18px;
   font-weight: 600;
   color: var(--navy);
 }
 
-.check-grid svg {
+.check-icon {
+  width: 66px;
+  height: 66px;
+  flex: 0 0 66px;
+  display: grid;
+  place-items: center;
   color: var(--gold);
+  background: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.check-icon svg {
   font-size: 22px;
-  flex-shrink: 0;
+}
+
+.check-grid li:hover .check-icon,
+.check-grid li:focus-within .check-icon {
+  background: var(--gold);
+  color: var(--navy);
+  animation: check-shake 0.65s ease;
+}
+
+@keyframes check-shake {
+  0%, 100% { transform: rotate(0); }
+  20%, 60% { transform: rotate(-12deg); }
+  40%, 80% { transform: rotate(12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .check-grid li:hover .check-icon,
+  .check-grid li:focus-within .check-icon {
+    animation: none;
+  }
 }
 
 /* ============================================================
@@ -1119,6 +1158,27 @@ ul {
   font-size: 90px;
   top: -20px;
   transform: translateX(-50%);
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+.services-head .kicker,
+.projects-header .kicker {
+  color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.services-head .section-title,
+.projects-header .section-title {
+  color: #080808;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(42px, 4vw, 60px);
+}
+
+.services-head .ghost-label,
+.projects-header .ghost-label {
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .service-wrap {
@@ -1236,13 +1296,16 @@ ul {
 }
 
 .service-card-link {
+  position: absolute;
+  left: 50%;
+  bottom: -42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 196px;
   min-height: 76px;
-  margin-top: 34px;
-  transform: translateY(42px);
+  margin: 0;
+  transform: translateX(-50%);
   background: var(--navy);
   color: var(--white);
   font-family: var(--font-heading);
@@ -1390,10 +1453,12 @@ ul {
   left: -72px;
   top: -42px;
   font-size: 150px;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 .process-copy .kicker {
   color: var(--gold);
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: 28px;
   letter-spacing: 0;
   margin-bottom: 42px;
@@ -1401,6 +1466,7 @@ ul {
 
 .process-copy .section-title {
   color: #080808;
+  font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(44px, 3.2vw, 64px);
   line-height: 1.38;
   margin-bottom: 24px;
@@ -1655,7 +1721,7 @@ ul {
   position: relative;
   color: var(--gold);
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 22px;
+  font-size: 28px;
   letter-spacing: 0;
   margin-bottom: 50px;
 }
@@ -1815,7 +1881,7 @@ ul {
   margin: 0 auto 36px;
   color: var(--gold);
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 22px;
+  font-size: 28px;
   letter-spacing: 0;
 }
 

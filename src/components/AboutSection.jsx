@@ -16,7 +16,7 @@ export default function AboutSection() {
           <span className="ghost-label">ABOUT</span>
           <span className="kicker">ABOUT OUR COMPANY</span>
           <h2 className="section-title">
-            Always dedicated<br />and devoted
+            Always dedicated and devoted
           </h2>
           <p>
             Slogan creation for your construction company is crucial for the overall branding.
@@ -27,14 +27,13 @@ export default function AboutSection() {
           <ul className="check-grid">
             {aboutChecks.map((item) => (
               <li key={item}>
-                <FaCheck aria-hidden="true" />
-                {item}
+                <span className="check-icon" aria-hidden="true">
+                  <FaCheck />
+                </span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
-          <a className="btn btn-navy" href="/about">
-            Read More
-          </a>
         </div>
       </div>
     </section>
