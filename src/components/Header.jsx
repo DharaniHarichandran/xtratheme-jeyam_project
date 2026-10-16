@@ -132,6 +132,9 @@ export default function Header({
           </nav>
 
           <div className="header-tools">
+            <a className="mobile-call" href={phoneHref} aria-label={`Call ${phone}`}>
+              <FaPhoneAlt aria-hidden="true" />
+            </a>
             <button className="search-btn" type="button" aria-label="Search box" onClick={onSearchOpen}>
               <FiSearch size={20} />
             </button>

@@ -531,6 +531,10 @@ ul {
   display: none;
 }
 
+.mobile-call {
+  display: none;
+}
+
 .header-consult {
   font-size: 13px;
   padding: 12px 24px;
@@ -1986,6 +1990,9 @@ ul {
 .footer-socials {
   display: flex;
   justify-content: center;
+  align-self: center;
+  width: max-content;
+  margin-inline: auto;
   gap: 15px;
   margin-top: 87px;
 }
